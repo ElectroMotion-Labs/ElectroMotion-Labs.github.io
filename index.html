@@ -341,11 +341,15 @@
     if (darkThemeQuery.matches) {
         body.classList.add("dark-mode");
         togglebutton.textContent = "☀️";
-        togglebutton.style.backgroundColor = "White";
+        togglebutton.style.padding = 0;
+        togglebutton.style.fontSize = "20px";
+        togglebutton.style.background = "White";
     } else {
         body.classList.add("light-mode");
         togglebutton.textContent = "🌙";
-        togglebutton.style.backgroundColor = "#333";
+        togglebutton.style.padding = 0;
+        togglebutton.style.fontSize = "20px";
+        togglebutton.style.background = "#444";
     }
 
   function toggleDarkMode() {
@@ -354,13 +358,17 @@
         body.classList.remove('dark-mode');
         body.classList.add('light-mode');
         togglebutton.textContent = "🌙";
-        togglebutton.style.backgroundColor = "#333";
+        togglebutton.style.padding = 0;
+        togglebutton.style.fontSize = "20px";
+        togglebutton.style.background = "#444";
     } 
     else {
         body.classList.remove('light-mode');
         body.classList.add('dark-mode');
         togglebutton.textContent = "☀️";
-        togglebutton.style.backgroundColor = "White";
+        togglebutton.style.padding = 0;
+        togglebutton.style.fontSize = "20px";
+        togglebutton.style.background = "White";
     }
 }
 
