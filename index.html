@@ -115,6 +115,9 @@
     header {
       padding: 10px;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     header h1 {
       font-size: 42px;
@@ -230,8 +233,19 @@
       background-color: #555;
     }
 
+    /* Default logo styles */
+    header .desktop-logo {
+      display: block; /* Show desktop logo by default */
+    }
+
     /* Responsive Styles */
     @media screen and (max-width: 768px) {
+      header .desktop-logo {
+        display: none; /* Hide desktop logo on mobile devices */
+      }
+      header .mobile-logo {
+        display: block; /* Show mobile logo on mobile devices */
+      }
       header h1 {
         font-size: 28px;
       }
@@ -258,7 +272,13 @@
 
 <body>
   <header>
-    <img src="electromotion-labs.svg" alt="ElectroMotion Labs Logo" style="height:5em; width:auto;">
+  
+  <!-- Desktop logo -->
+    <img class="desktop-logo" src="electromotion-labs.svg" alt="ElectroMotion Labs Logo" style="height:5em; width:auto;">
+
+  <!-- Mobile logo -->
+  
+    <img class="mobile-logo" src="electromotion-labs_mobile.svg" alt="ElectroMotion Labs Mobile Logo" style="height:3em; width:auto;">
     <p>Exploring the World of Electromotion</p>
   </header>
   <nav role="navigation">
@@ -331,6 +351,25 @@
   </footer>
 
   <script>
+
+    // JavaScript to switch between logos based on screen width
+    function updateLogoDisplay() {
+    const desktopLogo = document.querySelector('.desktop-logo');
+    const mobileLogo = document.querySelector('.mobile-logo');
+    if (window.innerWidth <= 768) {
+        desktopLogo.style.display = 'none';
+        mobileLogo.style.display = 'block';
+    } else {
+        desktopLogo.style.display = 'block';
+        mobileLogo.style.display = 'none';
+    }
+    }
+
+    // Initial check and update on page load
+    updateLogoDisplay();
+
+    // Event listener for window resize
+    window.addEventListener('resize', updateLogoDisplay);
 
     const togglebutton = document.getElementById("togglebutton");
 
