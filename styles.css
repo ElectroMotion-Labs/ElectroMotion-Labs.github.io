@@ -1,0 +1,253 @@
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #333;
+  color: #f5f5f5;
+}
+body.dark-mode header {
+  background-color: #444;
+  color: #f5f5f5;
+}
+body.dark-mode nav {
+  background-color: #333;
+}
+body.dark-mode nav a {
+  color: #f5f5f5;
+}
+body.dark-mode nav a:hover{
+    background-color: #be4646; /* Change background color on hover */
+}
+body.dark-mode .services-dropdown-content a:hover {
+  background-color: #af0a0a;
+}
+body.dark-mode .services-dropdown-content {
+  background-color: #444;
+}
+body.dark-mode section {
+  background-color: #222;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+body.dark-mode section h2 {
+  color: #00bfff;
+}
+body.dark-mode .sub-section {
+  background-color: #333;
+}
+body.dark-mode .sub-section h3 {
+  color: #00bfff;
+}
+body.dark-mode footer {
+  background-color: #444;
+  color: #f5f5f5;
+}
+body.dark-mode .highlighted-section {
+  opacity: 1 !important;
+  background-color: #000;
+}
+
+/* Light Mode Styles */
+body.light-mode {
+    background-color: #ffffff;
+    color: #333;
+}
+body.light-mode header {
+    background-color: #aad6ed;
+    color: #fff;
+}
+body.light-mode nav {
+    background-color: #555;
+}
+body.light-mode nav a {
+    color: #fff;
+}
+body.light-mode nav a:hover{
+    background-color: #be4646; /* Change background color on hover */
+}
+body.light-mode .services-dropdown-content a:hover {
+  background-color: #af0a0a;
+}
+body.light-mode .services-dropdown-content {
+    background-color: #444;
+}
+body.light-mode section {
+    background-color: #f0f0f0; /* Updated background color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+body.light-mode section h2 {
+    color: #0077b6;
+}
+body.light-mode .sub-section {
+    background-color: #f5f5f5;
+}
+body.light-mode .sub-section h3 {
+    color: #0077b6;
+}
+body.light-mode footer {
+    background-color: #0077b6;
+    color: #fff;
+}
+body.light-mode .highlighted-section {
+  opacity: 1 !important;
+  background-color: #e2dfdf;
+}
+
+/* Global Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+header {
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header h1 {
+  font-size: 42px;
+  margin-bottom: 5px;
+}
+header p {
+  font-size: 18px;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  position: relative;
+  z-index: 2; /* Set z-index to appear above sections */
+}
+nav a {
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+/* Add styles for the services dropdown */
+.services-dropdown {
+  position: relative;
+  margin-top: 10px;
+}
+.services-dropdown-content {
+  display: none;
+  position: absolute; /* Set position to fixed */
+  border-radius: 5px;
+  z-index: 3; /* Increased z-index to appear above nav and sections */
+  top: calc(100%); /* Position the dropdown below the button with a 5px gap */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%);
+  margin-top: 0; /* Remove the space between nav bar and dropdown */
+}
+.services-dropdown:hover .services-dropdown-content {
+  display: block;
+}
+.services-dropdown-content a {
+  display: block;
+  padding: 8px 20px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 0px;
+  z-index: 1; /* Set z-index for sections */
+}
+section {
+  margin-bottom: 40px;
+  border-radius: 10px;
+  padding: 30px;
+  opacity: 0;
+}
+section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+section p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+section ul {
+  list-style: none;
+  padding: 0;
+}
+section li {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.sub-section {
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.sub-section h3 {
+  margin-bottom: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+}
+
+header img {
+  width: auto;
+  height: auto;
+  transition: transform 0.2s;
+}
+
+/* Add slide-in animation */
+.slide-in {
+  animation: slideIn 1s ease-in-out forwards;
+}
+@keyframes slideIn {
+  0% { opacity: 0; transform: translateY(50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Button Styling */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+.button:hover {
+  background-color: #555;
+}
+
+/* Default logo styles */
+header .desktop-logo {
+  display: block; /* Show desktop logo by default */
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  header .desktop-logo {
+    display: block;
+    max-height: 100px; /* Set a maximum height for the desktop logo */
+    object-fit: contain; /* Adjust how the logo is resized within the available space */
+  }
+  header .mobile-logo {
+    display: block; /* Show mobile logo on mobile devices */
+  }
+  header h1 {
+    font-size: 28px;
+  }
+  header p {
+    font-size: 16px;
+  }
+  nav {
+    flex-direction: column;
+  }
+  nav a {
+    margin-bottom: 5px;
+  }
+  /* Adjust the position of the services dropdown */
+  .services-dropdown-content {
+    top: calc(100% + 5px); /* Position the dropdown below the button with a 5px gap */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
