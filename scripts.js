@@ -1,4 +1,4 @@
-    // JavaScript to switch between logos based on screen width
+// JavaScript to switch between logos based on screen width
 function updateLogoDisplay() {
 const desktopLogo = document.querySelector('.desktop-logo');
 const mobileLogo = document.querySelector('.mobile-logo');
@@ -57,29 +57,31 @@ else {
 }
 }
 
-function toggleServicesDropdown() {
-const dropdownContent = document.querySelector('body.dark-mode .services-dropdown-content');
-if (!dropdownContent) {
-// If dark mode is not applied, select the light mode dropdown content
-return document.querySelector('body.light-mode .services-dropdown-content').style.display =
-    document.querySelector('body.light-mode .services-dropdown-content').style.display === 'block' ? 'none' : 'block';
-}
-dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
-}
-
-// Attach click event listener to the services button
-const servicesButton = document.querySelector('.services-dropdown a');
-servicesButton.addEventListener('click', toggleServicesDropdown);
-
-// Close the dropdown when clicking outside
-window.addEventListener('click', function(event) {
-    if (!event.target.matches('.services-dropdown a')) {
+// Function to open the services dropdown
+function openServicesDropdown() {
     const dropdownContent = document.querySelector('.services-dropdown-content');
-    if (dropdownContent.style.display === 'block') {
-        dropdownContent.style.display = 'none';
-    }
-    }
-});
+    dropdownContent.style.display = 'block';
+  }
+  
+  // Function to close the services dropdown
+  function closeServicesDropdown() {
+    const dropdownContent = document.querySelector('.services-dropdown-content');
+    dropdownContent.style.display = 'none';
+  }
+  
+  // Attach hover event listeners to the services button
+  const servicesButton = document.querySelector('.services-dropdown');
+  servicesButton.addEventListener('mouseenter', openServicesDropdown);
+  servicesButton.addEventListener('mouseleave', closeServicesDropdown);
+  
+// Function to scroll to the services section
+  function scrollToServicesSection() {
+    const servicesSection = document.getElementById('services');
+    servicesSection.scrollIntoView({ behavior: 'smooth' });
+  }
+  
+  // Attach click event listener to the services button to scroll to the section
+  servicesButton.addEventListener('click', scrollToServicesSection);
 
 // JavaScript function to highlight the section on mouse enter
 function handleMouseEnter(event) {
@@ -118,7 +120,6 @@ navLinks.forEach(link => {
     });
 });
 
-
 // ScrollReveal animations
 ScrollReveal().reveal('header img', { distance: '20px', origin: 'top', delay: 100 });
 ScrollReveal().reveal('header p', { distance: '20px', origin: 'top', delay: 150 });
@@ -137,6 +138,6 @@ const servicesObserver = new IntersectionObserver((entries) => {
     });
 }, {
     root: null,
-    threshold: 0.5
+    threshold: 0.01
 });
     servicesObserver.observe(servicesSection);
