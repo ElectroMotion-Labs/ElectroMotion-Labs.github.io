@@ -28,13 +28,13 @@ if (darkThemeQuery.matches) {
     togglebutton.textContent = "☀️";
     togglebutton.style.padding = 0;
     togglebutton.style.fontSize = "20px";
-    togglebutton.style.background = "White";
+    // togglebutton.style.background = "White";
 } else {
     body.classList.add("light-mode");
     togglebutton.textContent = "🌙";
     togglebutton.style.padding = 0;
     togglebutton.style.fontSize = "20px";
-    togglebutton.style.background = "#444";
+    // togglebutton.style.background = "#444";
 }
 
 function toggleDarkMode() {
